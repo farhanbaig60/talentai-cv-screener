@@ -242,11 +242,20 @@ hr { border-color: #21262d !important; }
     color: #e6edf3 !important;
     font-weight: 500 !important;
 }
-.streamlit-expanderContent {
+.streamlit-expanderHeader {
     background: #161b22 !important;
     border: 1px solid #30363d !important;
-    border-top: none !important;
+    border-radius: 10px !important;
     color: #e6edf3 !important;
+    font-weight: 500 !important;
+}
+
+/* First rank gold highlight */
+details:first-of-type > summary {
+    background: linear-gradient(135deg, #2a1f00, #3d2e00) !important;
+    border: 1px solid #d29922 !important;
+    box-shadow: 0 0 12px rgba(210,153,34,0.2) !important;
+}
 }
 
 /* ── DATAFRAME ── */
