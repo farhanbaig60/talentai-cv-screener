@@ -13,10 +13,9 @@ import httpx
 from datetime import datetime
 
 # ── Keys ─────────────────────────────────────
-GROQ_KEY     = os.environ.get("GROQ_API_KEY", "")
-SUPA_URL     = os.environ.get("SUPABASE_URL", "https://zcscsdvqpwdgbejxlvis.supabase.co")
-SUPA_KEY     = os.environ.get("SUPABASE_KEY", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpjc2NzZHZxcHdkZ2JlanhsdmlzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MDExNTY4MiwiZXhwIjoyMDk1NjkxNjgyfQ.ShHrVcPbgq-T4mBx3D0mtlSaPO0YE13DER5qCBq-Lqs")
-
+GROQ_KEY = os.environ.get("GROQ_API_KEY", "")
+SUPA_URL = os.environ.get("SUPABASE_URL", "")
+SUPA_KEY = os.environ.get("SUPABASE_KEY", "")
 client = Groq(api_key=GROQ_KEY)
 
 st.set_page_config(
