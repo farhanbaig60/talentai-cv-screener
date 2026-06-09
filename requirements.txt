@@ -2,3 +2,6 @@ groq
 pymupdf
 streamlit
 pandas
+httpx
+postgrest
+reportlab
