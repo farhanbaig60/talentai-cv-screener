@@ -11,11 +11,14 @@ import os
 import hashlib
 import httpx
 from datetime import datetime
+from cv_maker import generate_cv_pdf
+from cv_maker_tab import show_cv_maker_tab
 
 # ── Keys ─────────────────────────────────────
-GROQ_KEY = os.environ.get("GROQ_API_KEY", "")
-SUPA_URL = os.environ.get("SUPABASE_URL", "")
-SUPA_KEY = os.environ.get("SUPABASE_KEY", "")
+GROQ_KEY     = os.environ.get("GROQ_API_KEY", "")
+SUPA_URL     = os.environ.get("SUPABASE_URL", "")
+SUPA_KEY     = os.environ.get("SUPABASE_KEY", "")
+
 client = Groq(api_key=GROQ_KEY)
 
 st.set_page_config(
@@ -412,9 +415,9 @@ with nav_r:
 
 # Tabs
 if st.session_state.is_admin:
-    tab1, tab2 = st.tabs(["🚀  CV Screener", "👑  Admin Panel"])
+    tab1, tab2, tab3 = st.tabs(["🚀  CV Screener", "📝  CV Maker", "👑  Admin Panel"])
 else:
-    tab1, = st.tabs(["🚀  CV Screener"])
+    tab1, tab2 = st.tabs(["🚀  CV Screener", "📝  CV Maker"])
 
 
 # ════════════════════════════════════════════
@@ -569,8 +572,13 @@ with tab1:
 # ════════════════════════════════════════════
 # TAB 2 — ADMIN PANEL
 # ════════════════════════════════════════════
+# CV Maker Tab
+with tab2:
+    show_cv_maker_tab()
+
+# Admin Panel
 if st.session_state.is_admin:
-    with tab2:
+    with tab3:
         st.markdown("<div style='height:20px'></div>", unsafe_allow_html=True)
         st.markdown('<div class="card-title">👑 Admin Panel</div>', unsafe_allow_html=True)
 
